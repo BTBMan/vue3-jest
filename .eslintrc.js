@@ -1,0 +1,63 @@
+/* eslint-disable @typescript-eslint/no-var-requires,import/no-extraneous-dependencies */
+// @ts-check
+const { defineConfig } = require('eslint-define-config');
+
+module.exports = defineConfig({
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+    es2020: true,
+  },
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+      tsx: true,
+    },
+  },
+  extends: [
+    'airbnb-base',
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'plugin:prettier/recommended',
+    'plugin:jest/recommended',
+  ],
+  rules: {
+    'prettier/prettier': 'error',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-alert': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-unused-vars': 'off',
+    'no-var': 'warn',
+    'no-restricted-syntax': 'off',
+    'no-param-reassign': 'off',
+    'no-plusplus': 'off',
+    'no-shadow': 'off',
+    'prefer-const': 'error',
+    'guard-for-in': 'off',
+    'next-line': 'off',
+    'class-methods-use-this': 'off',
+    'vue/html-closing-bracket-newline': 'warn',
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'import/order': 'warn',
+    'typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/semi': ['error'],
+    '@typescript-eslint/no-unused-vars-experimental': 'warn',
+    '@typescript-eslint/no-inferrable-types': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-shadow': 'error',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/ban-types': 'off',
+    'no-use-before-define': 'off',
+  },
+});
